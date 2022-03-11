@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   const noHeaderRoutes = [];
@@ -10,6 +11,7 @@ export default function Layout({ children }) {
       <div className="layout">
         {!noHeaderRoutes.includes(router.pathname) ? <Header /> : ""}
         {children}
+        <Footer />
       </div>
     </div>
   );

@@ -14,7 +14,9 @@ body {
   font-weight: 500;
   line-height: 19px;
   letter-spacing: 0.05em;
-  text-align: left;
+}
+.body {
+  @apply text-blackFont;
 }
 
 a {
