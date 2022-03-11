@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const noHeaderRoutes = [];
   const router = useRouter();
   return (
-    <div className="main_container" id="iman_container">
+    <div className="main_container min-h-screen" id="iman_container">
       <div className="layout">
         {!noHeaderRoutes.includes(router.pathname) ? <Header /> : ""}
         {children}

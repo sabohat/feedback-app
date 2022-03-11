@@ -11,7 +11,7 @@ body {
   font-family: "Inter";
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 19px;
   letter-spacing: 0.05em;
 }
@@ -40,15 +40,12 @@ a {
 
 /* ------------ Common --------- */
 
-.btn {
-  @apply px-3 py-1 rounded-md text-sm my-1 hover:scale-105 transition-transform;
-}
-.btn-primary {
-  @apply bg-blue-500 text-white;
-}
-
 .link {
   @apply hover:border-b border-blackFont transition-all;
+}
+
+.section-title {
+  @apply text-3xl font-bold;
 }
 
 /* ------- Header --------- */
