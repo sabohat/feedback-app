@@ -65,10 +65,10 @@ export default function Feedback() {
   return (
     <>
       {submitted ? (
-        <div className="w-full flex items-center justify-center flex-col">
-          <span>Successfully Submitted!</span>
+        <div className="wrapper w-full flex items-center justify-center flex-col h-60 md:h-96">
+          <span className="text-xl mb-4">Successfully Submitted :)</span>
           <Link href="/">
-            <a className="underline cursor-pointer">Return to Home</a>
+            <a className="text-blue-500 cursor-pointer">Return to Home</a>
           </Link>
         </div>
       ) : (
