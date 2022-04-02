@@ -20,7 +20,7 @@ export default function Feedback() {
     const { id } = router.query;
     // get module
     axios
-      .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${id}`)
+      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}`)
       .then((res) => {
         setModule(res.data);
         console.log(res.data);
@@ -45,7 +45,7 @@ export default function Feedback() {
 
     (async () => {
       const rawResponse = await fetch(
-        "https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/",
+        `${process.env.NEXT_APP_BASE_URL}/feedbacks/`,
         {
           method: "POST",
           headers: {
@@ -69,23 +69,7 @@ export default function Feedback() {
 
       console.log(content);
     })();
-    // axios
-    //   .post(`https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/`, {
-    //     text: feedback,
-    //     module: id,
-    //     teacher: null,
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //     setFeedback("");
-    //     setError(false);
-    //     setSubmitted(true);
-    //   })
-    //   .catch((err) => {
-    //     setError("Something went wrong, please try again");
-    //     console.log(err);
-    //   });
+  
   };
   return (
     <>

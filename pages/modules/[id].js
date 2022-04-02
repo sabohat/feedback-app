@@ -2,19 +2,11 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import FeedbackCard from "../../components/FeedbackCard";
-import ModuleCard from "../../components/ModuleCard";
 export default function Module() {
   const router = useRouter();
   const { id } = router.query;
 
-  const [feedbacks, setFeedbacks] = React.useState([
-    // {
-    //   id: 1,
-    //   text: "This module is very good",
-    //   rating: 5,
-    //   created_at: "2020-05-20",
-    // },
-  ]);
+  const [feedbacks, setFeedbacks] = React.useState([]);
   const [module, setModule] = React.useState(null);
 
   useEffect(() => {
@@ -23,9 +15,7 @@ export default function Module() {
     }
     // get feedbacks
     axios
-      .get(
-        `https://mysterious-beyond-72223.herokuapp.com/api/modules/${id}/feedbacks`
-      )
+      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}/feedbacks`)
       .then((res) => {
         setFeedbacks(res.data);
       })
@@ -35,7 +25,7 @@ export default function Module() {
 
     // get module
     axios
-      .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${id}`)
+      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}`)
       .then((res) => {
         setModule(res.data);
         console.log(res.data);

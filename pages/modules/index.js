@@ -23,9 +23,7 @@ export default function Modules({ data }) {
             key={item.id}
             className="w-full flex items-center justify-center"
           >
-            <ModuleCard
-              data={item}
-            ></ModuleCard>
+            <ModuleCard data={item}></ModuleCard>
           </div>
         ))}
       </div>
@@ -34,9 +32,7 @@ export default function Modules({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get(
-    "https://mysterious-beyond-72223.herokuapp.com/api/modules"
-  );
+  const { data } = await axios.get(`${process.env.NEXT_APP_BASE_URL}/modules`);
 
   return {
     props: { data },
