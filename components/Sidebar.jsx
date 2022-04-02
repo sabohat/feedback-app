@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { CloseIcon, OpenIcon } from "./svg";
 
 const links = [
   { name: "Home", to: "/", id: 1 },
@@ -74,36 +75,9 @@ export default function Sidebar() {
       <div className="bg-primaryGreen p-2 text-white absolute top-5 right-10 rounded-md">
         <button onClick={cycleOpen}>
           {open ? (
-            <svg
-              viewPort="0 0 12 12"
-              version="1.1"
-              width="20"
-              height="20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="1"
-                y1="21"
-                x2="21"
-                y2="1"
-                stroke="white"
-                strokeWidth="2"
-              />
-              <line
-                x1="1"
-                y1="1"
-                x2="21"
-                y2="21"
-                stroke="white"
-                strokeWidth="2"
-              />
-            </svg>
+            <CloseIcon/>
           ) : (
-            <svg viewBox="0 0 70 70" width="20" height="20" fill="white">
-              <rect width="70" height="8"></rect>
-              <rect y="30" width="70" height="8"></rect>
-              <rect y="60" width="70" height="8"></rect>
-            </svg>
+            <OpenIcon/>
           )}
         </button>
       </div>
