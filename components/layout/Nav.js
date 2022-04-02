@@ -22,8 +22,8 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/modules">
-              <a className="nav-btn">+ Create Feedback</a>
+            <Link href="/about">
+              <a className="nav-btn">About Us</a>
             </Link>
           </li>
         </ul>
