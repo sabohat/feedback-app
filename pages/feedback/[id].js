@@ -45,7 +45,7 @@ export default function Feedback() {
     let id = router.query.id;
 
     axios
-      .put(`https://mysterious-beyond-72223.herokuapp.com/api/feedbacks`, {
+      .post(`https://mysterious-beyond-72223.herokuapp.com/api/feedbacks`, {
         text: feedback,
         module: id,
         teacher: null,
