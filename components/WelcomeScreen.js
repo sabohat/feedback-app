@@ -5,7 +5,7 @@ export default function WelcomeScreen() {
   return (
     <section>
       <div className="wrapper flex items-center justify-between flex-col md:flex-row">
-        <div className="md:w-1/2 flex flex-col justify-center space-y-3 text-center md:text-left">
+        <div className="md:w-1/2 flex flex-col justify-center space-y-3 text-center items-center md:items-start md:text-left">
           <h2 className="section-title md:w-[400px] text-fontBlue">
             Your feedback matters to improve our university!
           </h2>
