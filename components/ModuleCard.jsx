@@ -12,9 +12,15 @@ export default function ModuleCard({ data }) {
         <Button
           title="Give Feedback"
           styles="bg-primaryGreen px-12"
-          onClick={() => router.push("/feedback/[id]", `/feedback/${data.guid}`)}
+          onClick={() =>
+            router.push("/feedback/[id]", `/feedback/${data.guid}`)
+          }
         />
-        <Button title="All Reviews" styles="bg-primaryBlue px-14" />
+        <Button
+          title="All Reviews"
+          styles="bg-primaryBlue px-14"
+          onClick={() => router.push("/modules/[id]", `/modules/${data.guid}`)}
+        />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Button from "./common/Button";
 
@@ -16,7 +17,9 @@ export default function WelcomeScreen() {
           </p>
           <div className="flex space-x-4">
             <Button title="For teachers" styles="bg-primaryGreen px-10" />
-            <Button title="For modules" styles="bg-primaryBlue px-10" />
+            <Link href="/modules">
+              <Button title="For modules" styles="bg-primaryBlue px-10" />
+            </Link>
           </div>
         </div>
         <div className="bg-welcome w-[260px] h-[228px] md:w-[520px] md:h-[456px] bg-contain bg-center"></div>
