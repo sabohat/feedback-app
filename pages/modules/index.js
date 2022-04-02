@@ -9,16 +9,23 @@ export default function Modules({ data }) {
   return (
     <div className={styles.container}>
       <div className="w-full max-w-[600px] mx-auto flex items-center mb-10 mt-5 border py-2 px-3 bg-white shadow-md justify-between rounded-md">
-       <span className="hidden md:block"><SearchIcon /></span> 
-        <input className="focus:outline-none w-2/3" placeholder="Search a Module"/>{" "}
+        <span className="hidden md:block">
+          <SearchIcon />
+        </span>
+        <input
+          className="focus:outline-none w-2/3"
+          placeholder="Search a Module"
+        />{" "}
         <Button title="Search" styles="bg-primaryBlue md:px-12 py-2"></Button>
       </div>
       <div className="w-full flex items-center justify-center flex-col space-y-5">
         {data.map((item) => (
-          <div key={item.id} className="w-full flex items-center justify-center">
+          <div
+            key={item.id}
+            className="w-full flex items-center justify-center"
+          >
             <ModuleCard
-              title={item.name}
-              description={item.description}
+              data={item}
             ></ModuleCard>
           </div>
         ))}
