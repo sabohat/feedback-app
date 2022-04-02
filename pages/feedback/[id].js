@@ -43,23 +43,49 @@ export default function Feedback() {
 
     let id = router.query.id;
 
-    axios
-      .post(`https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/`, {
-        text: feedback,
-        module: id,
-        teacher: null,
-      })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        setFeedback("");
-        setError(false);
-        setSubmitted(true);
-      })
-      .catch((err) => {
-        setError("Something went wrong, please try again");
+    (async () => {
+      const rawResponse = await fetch(
+        "https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text: feedback,
+            module: Number(id),
+            teacher: null,
+          }),
+        }
+      ).catch((err) => {
         console.log(err);
       });
+
+      const content = await rawResponse.json();
+      setFeedback("");
+      setError(false);
+      setSubmitted(true);
+
+      console.log(content);
+    })();
+    // axios
+    //   .post(`https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/`, {
+    //     text: feedback,
+    //     module: id,
+    //     teacher: null,
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //     setFeedback("");
+    //     setError(false);
+    //     setSubmitted(true);
+    //   })
+    //   .catch((err) => {
+    //     setError("Something went wrong, please try again");
+    //     console.log(err);
+    //   });
   };
   return (
     <>

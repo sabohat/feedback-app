@@ -6,7 +6,7 @@ export default function ModuleCard({ data }) {
   const router = useRouter();
   return (
     <div className="flex flex-col p-4 border rounded-xl w-full max-w-[526px] items-center justify-between space-y-3 shadow-md hover:cursor-pointer hover:shadow-xl transition-all">
-      <span className="font-bold">{data.title}</span>
+      <span className="font-bold">{data.name}</span>
       <p className="line-clamp-3">{data.description}</p>
       <div className="flex space-x-4">
         <Button

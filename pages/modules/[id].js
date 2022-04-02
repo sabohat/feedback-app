@@ -18,6 +18,9 @@ export default function Module() {
   const [module, setModule] = React.useState(null);
 
   useEffect(() => {
+    if (id === undefined) {
+      return;
+    }
     // get feedbacks
     axios
       .get(
@@ -43,7 +46,7 @@ export default function Module() {
   }, [id]);
 
   return (
-    <div className="wrapper w-full flex items-center justify-center flex flex-col">
+    <div className="wrapper w-full items-center justify-center flex flex-col">
       <span className="mb-12">Feedbacks: {module?.name}</span>
       <div>
         {feedbacks.map((item) => (
