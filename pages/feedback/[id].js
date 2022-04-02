@@ -19,6 +19,7 @@ export default function Feedback() {
   useEffect(() => {
     const { id } = router.query;
     // get module
+    if(id !== undefined) {
     axios
       .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}`)
       .then((res) => {
@@ -27,7 +28,8 @@ export default function Feedback() {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+    }
   }, [router]);
 
   const handleSubmit = (e) => {
