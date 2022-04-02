@@ -13,16 +13,17 @@ export default function Feedback() {
   const [feedback, setFeedback] = useState("");
   const [error, setError] = useState(false);
   const [module, setModule] = useState(null);
+  const [id, setId] = useState(null);
 
   const router = useRouter();
   const queryId = router.query.id;
-  console.log(router, queryId);
 
   useEffect(() => {
     
     // get module
 
     if(queryId !== undefined) {
+      setId(queryId);
     axios
       .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${queryId}`)
       .then((res) => {
@@ -60,7 +61,7 @@ export default function Feedback() {
           },
           body: JSON.stringify({
             text: feedback,
-            module: Number(queryId),
+            module: id,
             teacher: null,
           }),
         }
