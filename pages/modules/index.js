@@ -5,7 +5,6 @@ import { SearchIcon } from "../../components/svg";
 import styles from "../../styles/Home.module.css";
 
 export default function Modules({ data }) {
-  console.log(data);
   return (
     <div className={styles.container}>
       <div className="w-full max-w-[600px] mx-auto flex items-center mb-10 mt-5 border py-2 px-3 bg-white shadow-md justify-between rounded-md">

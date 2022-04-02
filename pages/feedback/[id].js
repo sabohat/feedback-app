@@ -15,7 +15,6 @@ export default function Feedback() {
   const [module, setModule] = useState(null);
 
   const router = useRouter();
-  console.log("router", router);
 
   useEffect(() => {
     const { id } = router.query;
