@@ -8,12 +8,12 @@ export default function Module() {
   const { id } = router.query;
 
   const [feedbacks, setFeedbacks] = React.useState([
-    {
-      id: 1,
-      text: "This module is very good",
-      rating: 5,
-      created_at: "2020-05-20",
-    },
+    // {
+    //   id: 1,
+    //   text: "This module is very good",
+    //   rating: 5,
+    //   created_at: "2020-05-20",
+    // },
   ]);
   const [module, setModule] = React.useState(null);
 
@@ -46,7 +46,7 @@ export default function Module() {
   }, [id]);
 
   return (
-    <div className="wrapper w-full items-center justify-center flex flex-col">
+    <div className="wrapper w-full h-[65vh] items-center justify-center flex flex-col">
       <span className="mb-12">Feedbacks: {module?.name}</span>
       <div>
         {feedbacks.map((item) => (
