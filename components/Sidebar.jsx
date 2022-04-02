@@ -79,11 +79,11 @@ export default function Sidebar() {
            <line x1="1" y1="21" 
                  x2="21" y2="1" 
                  stroke="white" 
-                 stroke-width="2"/>
+                 strokeWidth="2"/>
            <line x1="1" y1="1" 
                  x2="21" y2="21" 
                  stroke="white" 
-                 stroke-width="2"/>
+                 strokeWidth="2"/>
        </svg>
           ) : (
             <svg viewBox="0 0 70 70" width="20" height="20" fill="white">
