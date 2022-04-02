@@ -15,13 +15,16 @@ export default function Feedback() {
   const [module, setModule] = useState(null);
 
   const router = useRouter();
+  const queryId = router.query.id;
+  console.log(router, queryId);
 
   useEffect(() => {
-    const { id } = router.query;
+    
     // get module
-    if(id !== undefined) {
+
+    if(queryId !== undefined) {
     axios
-      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}`)
+      .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${queryId}`)
       .then((res) => {
         setModule(res.data);
         console.log(res.data);
@@ -30,7 +33,7 @@ export default function Feedback() {
         console.log(err);
       })
     }
-  }, [router]);
+  }, [queryId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,10 +47,11 @@ export default function Feedback() {
     // submit feedback
 
     let id = router.query.id;
+    
 
     (async () => {
       const rawResponse = await fetch(
-        `${process.env.NEXT_APP_BASE_URL}/feedbacks/`,
+        `https://mysterious-beyond-72223.herokuapp.com/api/feedbacks/`,
         {
           method: "POST",
           headers: {
@@ -56,7 +60,7 @@ export default function Feedback() {
           },
           body: JSON.stringify({
             text: feedback,
-            module: Number(id),
+            module: Number(queryId),
             teacher: null,
           }),
         }

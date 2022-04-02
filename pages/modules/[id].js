@@ -10,29 +10,28 @@ export default function Module() {
   const [module, setModule] = React.useState(null);
 
   useEffect(() => {
-    if (id === undefined) {
-      return;
-    }
-    // get feedbacks
-    axios
-      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}/feedbacks`)
-      .then((res) => {
-        setFeedbacks(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (id !== undefined) {
+      // get feedbacks
+      axios
+        .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${id}/feedbacks`)
+        .then((res) => {
+          setFeedbacks(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-    // get module
-    axios
-      .get(`${process.env.NEXT_APP_BASE_URL}/modules/${id}`)
-      .then((res) => {
-        setModule(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      // get module
+      axios
+        .get(`https://mysterious-beyond-72223.herokuapp.com/api/modules/${id}`)
+        .then((res) => {
+          setModule(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [id]);
 
   return (

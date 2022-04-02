@@ -32,7 +32,7 @@ export default function Modules({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get(`${process.env.NEXT_APP_BASE_URL}/modules`);
+  const { data } = await axios.get(`https://mysterious-beyond-72223.herokuapp.com/api/modules`);
 
   return {
     props: { data },
