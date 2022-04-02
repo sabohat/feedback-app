@@ -22,3 +22,27 @@ export const Logo = () => (
     />
   </svg>
 );
+export const SearchIcon = () => (
+  <svg
+    width="22"
+    height="20"
+    viewBox="0 0 22 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.88891 17C14.7981 17 18.7778 13.4182 18.7778 8.99998C18.7778 4.58171 14.7981 1 9.88891 1C4.9797 1 1 4.58171 1 8.99998C1 13.4182 4.9797 17 9.88891 17Z"
+      stroke="#C4C4C4"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.0001 19L16.1667 14.65"
+      stroke="#C4C4C4"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./common/Button";
-import Image from "next/image";
 
 export default function WelcomeScreen() {
   return (
