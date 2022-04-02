@@ -7,8 +7,8 @@ export default function () {
       <nav className="hidden md:flex">
         <ul className="nav">
           <li>
-            <Link href="/features">
-              <a className="nav-link">Features</a>
+            <Link href="/">
+              <a className="nav-link">Home</a>
             </Link>
           </li>
           <li>
@@ -22,7 +22,7 @@ export default function () {
             </Link>
           </li>
           <li>
-            <Link href="/create">
+            <Link href="/modules">
               <a className="nav-btn">+ Create Feedback</a>
             </Link>
           </li>
