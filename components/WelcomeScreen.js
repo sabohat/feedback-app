@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function WelcomeScreen() {
   return (
     <section>
-      <div className="wrapper flex items-center justify-between">
-        <div className="w-1/2 flex flex-col justify-center space-y-3">
-          <h2 className="section-title w-[400px] text-fontBlue">
+      <div className="wrapper flex items-center justify-between flex-col-reverse md:flex-row">
+        <div className="md:w-1/2 flex flex-col justify-center space-y-3">
+          <h2 className="section-title md:w-[400px] text-fontBlue">
             Your feedback matters to improve our university!
           </h2>
           <p className="leading-5">
@@ -20,7 +20,7 @@ export default function WelcomeScreen() {
             <Button title="For modules" styles="bg-primaryBlue px-10" />
           </div>
         </div>
-        <div className="bg-welcome w-[520px] h-[456px] bg-contain bg-center"></div>
+        <div className="bg-welcome w-[260px] h-[228px] md:w-[520px] md:h-[456px] bg-contain bg-center"></div>
       </div>
     </section>
   );
