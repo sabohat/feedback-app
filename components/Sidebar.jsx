@@ -34,7 +34,7 @@ export default function Sidebar() {
   const [open, cycleOpen] = useCycle(false, true);
 
   return (
-    <div className="flex flex-reverse-col absolute top-0 left-0 w-full justify-end md:hidden">
+    <div className="flex flex-reverse-col absolute top-0 left-0 w-full justify-end md:hidden z-10">
       <AnimatePresence>
         {open && (
           <motion.aside
