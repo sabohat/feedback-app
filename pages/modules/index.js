@@ -15,7 +15,7 @@ export default function Modules({ data }) {
       </div>
       <div className="w-full flex items-center justify-center flex-col space-y-5">
         {data.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="w-full flex items-center justify-center">
             <ModuleCard
               title={item.name}
               description={item.description}
