@@ -16,10 +16,14 @@ body {
   letter-spacing: 0.05em;
   width: 100%;
   overflow-x: hidden;
-  @media (max-width: 768px) {
-    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
   }
 }
+
 .body {
   @apply text-blackFont;
 }
@@ -38,7 +42,9 @@ a {
   max-width: 1236px;
   margin: 0 auto;
   padding: 36px;
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  .wrapper {
     padding: 16px;
   }
 }
