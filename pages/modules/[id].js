@@ -37,7 +37,7 @@ export default function Module() {
   return (
     <div className="wrapper w-full h-[65vh] items-center justify-center flex flex-col">
       <span className="mb-12">Feedbacks: {module?.name}</span>
-      <div>
+      <div className="flex flex-col space-y-3">
         {feedbacks.map((item) => (
           <div key={item?.id}>
             <FeedbackCard data={item} />
